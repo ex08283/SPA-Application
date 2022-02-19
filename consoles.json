@@ -1,0 +1,212 @@
+{
+  "consoles": [
+    {
+      "id": 1,
+      "console": "Xbox 360",
+      "dateOfRelease": "2005-05-12",
+      "handheld": false,
+      "Generation": "Seventh",
+      "image": "https://www.backmarket.co.uk/second-hand-xbox-360-slim-hdd-250-gb-black/251300.html?shopping=gmc&gclid=Cj0KCQiApL2QBhC8ARIsAGMm-KEJ-edrP_gTI70FNJCcMlWP1EsOXFh5fAVSc9eSU1GLoK2uVNpB-nQaAuB8EALw_wcB#?l=10",
+      "launchPrice": 299
+    },
+    {
+      "id": 2,
+      "console": "Xbox One",
+      "dateOfRelease": "2013-11-2",
+      "handheld": false,
+      "generation": "Eighth",
+      "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.the-ambient.com%2Fguides%2Fxbox-one-4k-essential-guide-1412&psig=AOvVaw0Rnl3gbInOqk0TziLmN4Gn&ust=1645300365140000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNiGvNCDivYCFQAAAAAdAAAAABAL",
+      "launchPrice": 499
+    },
+    {
+      "id": 3,
+      "console": "Playstation 4",
+      "dateOfRelease": "2013-11-15",
+      "handHeld": false,
+      "generation": "Eighth",
+      "image": "https://www.backmarket.co.uk/second-hand-playstation-4-1000gb-black/604906.html#l=12",
+      "launchPrice": 399
+    },
+    {
+      "id": 4,
+      "console": "Nintendo Entertainment System",
+      "dateOfRelease": "1983-07-15",
+      "handheld": false,
+      "generation": "Third",
+      "image": "https://cdn.arstechnica.net/wp-content/uploads/2013/07/NES-Console-Set.jpg",
+      "launchPrice": 180
+    },
+    {
+      "id": 5,
+      "console": "PlayStation 1",
+      "dateOfRelease": "1994-12-03",
+      "handheld": false,
+      "generation": "Fifth",
+      "image": "https://www.gamespot.com/a/uploads/scale_super/1568/15683559/3134744-ps1-2.jpg",
+      "launchPrice": 299
+    },
+    {
+      "id": 6,
+      "console": "Nintendo Switch",
+      "dateOfRelease": "2017-03-03",
+      "handheld": true,
+      "generation": "Eighth",
+      "image": "https://s3.amazonaws.com/prod-media.gameinformer.com/styles/full/s3/2020/09/22/65150db2/nintendoswitch.jpg",
+      "launchPrice": 299
+    },
+    {
+      "id": 7,
+      "console": "Game Boy",
+      "dateOfRelease": "1989-04-21",
+      "handheld": true,
+      "generation": "Fourth",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Game-Boy-FL.jpg/494px-Game-Boy-FL.jpg",
+      "launchPrice": 90
+    },
+    {
+      "id": 8,
+      "console": "Playstation 3",
+      "dateOfRelease": "2006-11-11",
+      "handheld": false,
+      "generation": "Seventh",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Sony-PlayStation-3-2001A-wController-L.jpg/800px-Sony-PlayStation-3-2001A-wController-L.jpg",
+      "launchPrice": 499
+    },
+    {
+      "id": 9,
+      "console": "Atari 7800",
+      "dateOfRelease": "1986-05-01",
+      "handheld": false,
+      "generation": "Third",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Atari-7800-Console-Set.jpg/800px-Atari-7800-Console-Set.jpg",
+      "launchPrice": 140
+    },
+    {
+      "id": 10,
+      "console": "Atari Lynx",
+      "dateOfRelease": "1989-11-01",
+      "handheld": true,
+      "generation": "fourth",
+      "image": "https://en.wikipedia.org/wiki/File:Atari-Lynx-I-Handheld.jpg",
+      "launchPrice": 180
+    },
+    {
+      "id": 11,
+      "console": "Xbox One X",
+      "dateOfRelease": "2017-11-07",
+      "handheld": false,
+      "generation": "Eighth",
+      "image": "https://www.gamingexpert.net/wp-content/uploads/2020/03/Xbox-One-X-box-scaled.jpg",
+      "launchPrice": 499
+    },
+    {
+      "id": 12,
+      "console": "Playstation 5",
+      "dateOfRelease": "2020-11-12",
+      "handheld": false,
+      "generation": "Ninth",
+      "image": "https://www.denofgeek.com/wp-content/uploads/2020/06/PlayStation-5.png?resize=768%2C432",
+      "launchPrice": 49
+    },
+    {
+      "id": 13,
+      "console": "Genesis",
+      "dateOfRelease": "1990-11-21",
+      "handheld": false,
+      "generation": "Fourth",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Sega-Genesis-Mod2-Set.png/1920px-Sega-Genesis-Mod2-Set.png",
+      "launchPrice": 200
+    },
+    {
+      "id": 14,
+      "console": "Nintendo 64",
+      "dateOfRelease": "1995-11-09",
+      "handheld": false,
+      "generation": "Fifth",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/N64-Console-Set.png/1920px-N64-Console-Set.png",
+      "launchPrice": 300
+    },
+    {
+      "id": 15,
+      "console": "Xbox",
+      "dateOfRelease": "2001-11-15",
+      "handheld": false,
+      "generation": "Sixth",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Xbox-Console-Set.png/1920px-Xbox-Console-Set.png",
+      "launchPrice": 320
+    }
+
+  ],
+  "games": [
+    {
+      "id": 1,
+      "Name": "Halo",
+      "releaseDate": "2001-11-15",
+      "multiplayerOnline": true,
+      "consoleId": 1
+    },
+    {
+      "id": 2,
+      "name": "Fable II",
+      "releaseDate": "2008-10-2008",
+      "multiplayerOnline": true,
+      "consoleId": 1
+    },
+    {
+      "id": 3,
+      "name": "Halo Wars 2",
+      "releaseDate": "2017-02-21",
+      "multiplayerOnline": true,
+      "consoleId": 2
+    },
+    {
+      "id": 4,
+      "name": "GT Sport",
+      "releaseDate": "2017-10-17",
+      "multiplayerOnline": true,
+      "consoleId": 3
+    },
+    {
+      "id": 5,
+      "name": "Duck Hunt",
+      "releaseDate": "1984-04-21",
+      "multiplayerOnline": false,
+      "consoleId": 4
+    },
+    {
+      "id": 6,
+      "name": "Resident Evil 2",
+      "releaseDate": "1998-01-21",
+      "multiplayerOnline": false,
+      "consoleId": 5
+    },
+    {
+      "id": 7,
+      "name": "Mario KartT 8 Deluxe",
+      "releaseDate": "2017-04-28",
+      "multiplayerOnline": true,
+      "consoleId": 6
+    },
+    {
+      "id": 8,
+      "name": "Super Mario Land",
+      "releaseDate": "1989-04-21",
+      "multiplayerOnline": false,
+      "consoleId": 7
+    },
+    {
+      "id": 9,
+      "name": "Little Big Planet",
+      "releaseDate": "2011-01-18",
+      "multiplayerOnline": false,
+      "consoleId": 8
+    },
+    {
+      "id": 10,
+      "name": "Alien Brigade",
+      "releaseDate": "1990-01-25",
+      "multiplayerOnline": false,
+      "consoleId": 9
+    }
+  ]
+}
