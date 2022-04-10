@@ -1,0 +1,23 @@
+{
+  "name": "groeiproject",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./02_node_basics/main.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/ex08283/webtechnologie-2-groeiproject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/ex08283/webtechnologie-2-groeiproject/issues"
+  },
+  "homepage": "https://gitlab.com/ex08283/webtechnologie-2-groeiproject#readme"
+}
