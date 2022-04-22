@@ -4,10 +4,14 @@
   "type": "module",
   "description": "",
   "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.3",
+    "morgan": "^1.10.0",
+    "through2-map": "^3.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./02_node_basics/main.js"
-
   },
   "repository": {
     "type": "git",

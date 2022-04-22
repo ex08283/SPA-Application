@@ -2,7 +2,7 @@
   "consoles": [
     {
       "id": 1,
-      "console": "Xbox 360",
+      "consol": "Xbox 360",
       "dateOfRelease": "2005-05-12",
       "handheld": false,
       "Generation": "Seventh",
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "console": "Xbox One",
+      "consol": "Xbox One",
       "dateOfRelease": "2013-11-2",
       "handheld": false,
       "generation": "Eighth",
@@ -20,7 +20,7 @@
     },
     {
       "id": 3,
-      "console": "Playstation 4",
+      "consol": "Playstation 4",
       "dateOfRelease": "2013-11-15",
       "handHeld": false,
       "generation": "Eighth",
@@ -29,7 +29,7 @@
     },
     {
       "id": 4,
-      "console": "Nintendo Entertainment System",
+      "consol": "Nintendo Entertainment System",
       "dateOfRelease": "1983-07-15",
       "handheld": false,
       "generation": "Third",
@@ -38,7 +38,7 @@
     },
     {
       "id": 5,
-      "console": "PlayStation 1",
+      "consol": "PlayStation 1",
       "dateOfRelease": "1994-12-03",
       "handheld": false,
       "generation": "Fifth",
@@ -47,7 +47,7 @@
     },
     {
       "id": 6,
-      "console": "Nintendo Switch",
+      "consol": "Nintendo Switch",
       "dateOfRelease": "2017-03-03",
       "handheld": true,
       "generation": "Eighth",
@@ -56,7 +56,7 @@
     },
     {
       "id": 7,
-      "console": "Game Boy",
+      "consol": "Game Boy",
       "dateOfRelease": "1989-04-21",
       "handheld": true,
       "generation": "Fourth",
@@ -65,7 +65,7 @@
     },
     {
       "id": 8,
-      "console": "Playstation 3",
+      "consol": "Playstation 3",
       "dateOfRelease": "2006-11-11",
       "handheld": false,
       "generation": "Seventh",
@@ -74,7 +74,7 @@
     },
     {
       "id": 9,
-      "console": "Atari 7800",
+      "consol": "Atari 7800",
       "dateOfRelease": "1986-05-01",
       "handheld": false,
       "generation": "Third",
@@ -83,7 +83,7 @@
     },
     {
       "id": 10,
-      "console": "Atari Lynx",
+      "consol": "Atari Lynx",
       "dateOfRelease": "1989-11-01",
       "handheld": true,
       "generation": "fourth",
@@ -92,7 +92,7 @@
     },
     {
       "id": 11,
-      "console": "Xbox One X",
+      "consol": "Xbox One X",
       "dateOfRelease": "2017-11-07",
       "handheld": false,
       "generation": "Eighth",
@@ -101,7 +101,7 @@
     },
     {
       "id": 12,
-      "console": "Playstation 5",
+      "consol": "Playstation 5",
       "dateOfRelease": "2020-11-12",
       "handheld": false,
       "generation": "Ninth",
@@ -110,7 +110,7 @@
     },
     {
       "id": 13,
-      "console": "Genesis",
+      "consol": "Genesis",
       "dateOfRelease": "1990-11-21",
       "handheld": false,
       "generation": "Fourth",
@@ -119,7 +119,7 @@
     },
     {
       "id": 14,
-      "console": "Nintendo 64",
+      "consol": "Nintendo 64",
       "dateOfRelease": "1995-11-09",
       "handheld": false,
       "generation": "Fifth",
@@ -128,7 +128,7 @@
     },
     {
       "id": 15,
-      "console": "Xbox",
+      "consol": "Xbox",
       "dateOfRelease": "2001-11-15",
       "handheld": false,
       "generation": "Sixth",
