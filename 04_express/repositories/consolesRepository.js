@@ -13,7 +13,7 @@ export function findBySearch(term){
 }
 
 export function findConsolesByTwoParam(){
-    return entities.consoles.map(c => ({id: c.id, consol: c.consol, Generation: c.Generation}))
+    return entities.consoles.map(c => ({id: c.id, consol: c.consol, generation: c.generation}))
 }
 
 export function getAllConsoles(){
@@ -22,7 +22,7 @@ export function getAllConsoles(){
 
 export function addConsole(consol) {
     consol.id = nextId
-    entities.consoles.push(consol)
+    entities.consoles.push({image:"",...consol})
     //if (req.body.id >= nextKey) nextKey = req.body.id + 1
     nextId++;
     return (nextId - 1);
@@ -30,17 +30,18 @@ export function addConsole(consol) {
 }
 
 export function addConsoleByPut(consol, id) {
+
     const idx = entities.consoles.findIndex(p => p.id === parseInt(id));
-    consol.id = Number(consol.id)
+
     let status
 
     //we are assuming that req.body contains attribute id
     if (idx >= 0){ //console bestaat
-        entities.consoles[idx] = consol
-        status = 200
+        entities.consoles[idx] = {...entities.consoles[idx], ...consol}
+        status = 204
     } else { //console bestaat niet
         entities.consoles.push(consol)
-        status = 204
+        status = 201
         if (consol.id >= nextId) nextId = consol.id + 1
     }
     return status

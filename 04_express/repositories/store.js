@@ -1,6 +1,6 @@
 import fs from "fs"
 
-const file = '../db.json'
+const file = 'db.json'
 export let entities;
 
 fs.readFile(file, (err, data) => {

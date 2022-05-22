@@ -3,6 +3,7 @@
 /03_node_server_les/
 /04_express_les/
 /05_asynch_les
+/06_dynfont_les
 node_modules
 
 .idea

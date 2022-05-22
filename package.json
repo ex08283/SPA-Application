@@ -5,10 +5,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "express": "^4.18.0",
     "morgan": "^1.10.0",
+    "nodemon": "^2.0.16",
     "promises": "^0.2.5",
     "through2-map": "^3.0.0",
-    "timers": "^0.1.1"
+    "timers": "^0.1.1",
+    "cors": "^2.8.5"
   },
   "scripts": {
     "start": "node 02_node_basics/main.js"
@@ -24,5 +27,7 @@
     "url": "https://gitlab.com/ex08283/webtechnologie-2-groeiproject/issues"
   },
   "homepage": "https://gitlab.com/ex08283/webtechnologie-2-groeiproject#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "cors": "^2.8.5"
+  }
 }

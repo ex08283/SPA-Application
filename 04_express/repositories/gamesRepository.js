@@ -7,7 +7,6 @@ export function findBy(gameTest){
 export function getAllGames(){
     return entities.games
 }
-//console.log(findBy(game => game.consoleId === 1))
 
 export function getGameById(id){
     return entities.games.find(g => g.id === parseInt(id))

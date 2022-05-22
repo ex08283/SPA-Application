@@ -9,21 +9,22 @@ export const router = express.Router({mergeParams:true})
 router.get('/:id', GameByID);
 router.get('/', getGames);
 
-
 function getGames(req, res) {
-    //let games = (req.games)? req.games: getAllGames()
-    if (req.params.consoleId) {
-        console.log("yes");
-    }
+    //if the req url has consoleID param geef
+    // 2 belangrijkste attributen van de subentiteiten
+    // die bij de hoofdentiteit horen in HAL _embedded formaat
+    // en anders geef alle subentiteiten
     let games = (req.params.consoleId)?
         findBy(g => g.consoleId === parseInt(req.params.consoleId))
         : getAllGames()
-    console.log(req.games)
-    games = changeFormat(games, req)
+    //console.log(req.games)
+    games.forEach( g => changeFormat(games, req))
+    console.log(games)
     res.json(games)
 }
 
-
+//Geef subentiteit op basis van identificerend attribuut.
+// Geef alle attributen.
 function GameByID(req, res) {
     let game = getGameById(req.params.id)
     if (typeof game === "undefined") {

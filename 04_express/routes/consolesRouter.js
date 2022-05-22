@@ -9,7 +9,7 @@ import {
     getAllConsoles
 } from "../repositories/consolesRepository.js";
 import {router as gamesRouter} from "./gamesRouter.js";
-import {findBy} from "../repositories/gamesRepository.js";
+//import {findBy} from "../repositories/gamesRepository.js";
 
 
 
@@ -28,12 +28,15 @@ router.use(bodyParser.json())
 router.get("/consoles", getConsoles)
 router.get('/consoles/:id', getConsoleById)
 router.delete('/consoles/:id', deleteConsoleById)
+//add new console
 router.post('/consoles/', addToConsoles)
+//adapt existing console
 router.put('/consoles/:id', changeConsole)
 
 
 
 function changeConsole(req, res) {
+    console.log(req.body)
     res.status = addConsoleByPut(req.body, req.params.id)
     res.end()
 }
@@ -72,12 +75,14 @@ function getConsoleById(req, res) {
 
 
 function getConsoles(req, res) {
+    //console.log(req.query.search)
     if (req.query.search){
         const foundSearch= findBySearch(req.query.search)
         if (foundSearch.length < 1) {
             console.log('no consoles found')
             res.status(404).send('no consoles found')
         } else {
+            //console.log("search")
             res.json(foundSearch)
         }
     } else {
@@ -91,10 +96,11 @@ function getConsoles(req, res) {
             foundItems.map(p => addSelf(p, url.format({
                 protocol: req.protocol,
                 host: req.get("host"),
-                pathname: "/api/personen/" + p.id
+                pathname: "/api/consoles/" + p.id
             })))
             res.json(foundItems)
         }
+
     }
 
 }
@@ -102,7 +108,7 @@ function getConsoles(req, res) {
 export function addSelf(object, href) {
     //console.log(object)
     object._links = {
-        "self": {href}
+        "self": href
     }
     return object
 }

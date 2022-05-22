@@ -5,7 +5,7 @@
       "consol": "Xbox 360",
       "dateOfRelease": "2005-05-12",
       "handheld": false,
-      "Generation": "Seventh",
+      "generation": "Seventh",
       "image": "https://www.backmarket.co.uk/cdn-cgi/image/format=auto,quality=75,width=640/https://d1eh9yux7w8iql.cloudfront.net/product_images/251300_b39aca39-3263-41a9-adf8-2250b7e087fa.jpg",
       "launchPrice": 299
     },
@@ -22,7 +22,7 @@
       "id": 3,
       "consol": "Playstation 4",
       "dateOfRelease": "2013-11-15",
-      "handHeld": false,
+      "handheld": false,
       "generation": "Eighth",
       "image": "https://www.backmarket.co.uk/cdn-cgi/image/format=auto,quality=75,width=640/https://d1eh9yux7w8iql.cloudfront.net/product_images/None_bb7ae255-3c05-458b-9c5f-bb43e26d031e.jpg",
       "launchPrice": 399
@@ -96,7 +96,7 @@
       "dateOfRelease": "2017-11-07",
       "handheld": false,
       "generation": "Eighth",
-      "image": "https://www.gamingexpert.net/wp-content/uploads/2020/03/Xbox-One-X-box-scaled.jpg",
+      "image": "https://cdn0.vox-cdn.com/uploads/chorus_asset/file/8667595/xboxonex.jpg",
       "launchPrice": 499
     },
     {
@@ -140,7 +140,7 @@
   "games": [
     {
       "id": 1,
-      "Name": "Halo",
+      "name": "Halo",
       "releaseDate": "2001-11-15",
       "multiplayerOnline": true,
       "consoleId": 1
