@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>SPA</title>
+  <script defer src="../app.js"></script>
+  <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body>
+<div id="lijst" class="page">
+  <h1>Consoles</h1>
+  <table id="consolesTable">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Console</th>
+      <th>Generation</th>
+    </tr>
+    </thead>
+  </table>
+</div>
+
+<div id="detail" class="page collapsed">
+  <h1>Console Details</h1>
+  <form id="consolForm">
+    <fieldset id="consolFs">
+      <legend id="consoleLegend"></legend>
+      <label for="consol">Console</label>
+      <input type="text" id="consol" name="consol" disabled>
+      <label for="dateOfRelease">Date of Release</label>
+      <input type="text" id="dateOfRelease" name="dateOfRelease" disabled>
+      <label for="generation">Generation</label>
+      <input type="text" id="generation" name="generation" disabled>
+      <label for="handheld">Handheld</label>
+      <input type="text" id="handheld" name="handheld" disabled>
+      <label for="launchPrice">Launch Price</label>
+      <input type="text" id="launchPrice" name="launchPrice" disabled>
+      <img src="" id="consoleImage" alt="Image of Console">
+      <button id="newButton" type="button">New</button>
+      <button id="showAllConsoles" type="button">Show all consoles</button>
+      <button id="editButton" type="button">Edit</button>
+
+    </fieldset>
+    <fieldset id="gameFs">
+      <table id="tableConsoleGame">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Release Date</th>
+          <th>Online Multiplayer</th>
+        </tr>
+        </thead>
+      </table>
+    </fieldset>
+  </form>
+</div>
+
+</body>
+</html>

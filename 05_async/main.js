@@ -55,7 +55,7 @@ async function writeConsolesAsync() {
 }
 
 
-// Voeg aan app.js een main() functie
+// Voeg aan commonUI.js een main() functie
 function main() {
     //read db.json
     fs.readFile('db.json')

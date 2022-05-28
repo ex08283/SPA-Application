@@ -83,6 +83,11 @@ function getConsoles(req, res) {
             res.status(404).send('no consoles found')
         } else {
             //console.log("search")
+            foundSearch.map(p => addSelf(p, url.format({
+                protocol: req.protocol,
+                host: req.get("host"),
+                pathname: "/api/consoles/" + p.id
+            })))
             res.json(foundSearch)
         }
     } else {
