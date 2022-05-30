@@ -1,3 +1,3 @@
 import start from "./js/commonUI.js";
-import "./css/style.css"
+import "./scss/style.scss"
 start()

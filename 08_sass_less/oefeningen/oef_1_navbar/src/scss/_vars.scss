@@ -1,0 +1,8 @@
+@use 'sass:color';
+
+//$in-themakleur:#5ddce2;
+$themakleur: white;
+$in-themakleur:color.invert($themakleur);
+$merk-kleur: silver;
+$menu-items: 3;
+$xsq: "screen and (max-width: 576px)";

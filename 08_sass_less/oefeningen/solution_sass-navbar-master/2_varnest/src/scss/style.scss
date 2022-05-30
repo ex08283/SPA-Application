@@ -1,0 +1,41 @@
+$themakleur:#a2231d;
+$in-themakleur:#5ddce2;
+$merk-kleur: silver;
+
+
+h1 {
+	color: $themakleur;
+}
+nav {
+	background-color: $themakleur;
+
+	.navbar-nav {
+		list-style: none;
+		display: flex;
+		li {
+			padding-right: 15px;
+			a {
+				text-decoration: none;
+				color: $in-themakleur;
+			}
+		}
+	}
+
+	.navbar-brand {
+		text-decoration: none;
+		color: $merk-kleur;
+
+	}
+
+	.sr-only {
+		display: none;
+	}
+
+	.icon-bar {
+		width: 20px;
+		height: 2px;
+		background-color: slategray;
+		margin: 2px;
+		display: block;
+	}
+}

@@ -1,0 +1,64 @@
+@use "vars" as *;
+@use "mixins" as m;
+
+.starter-template {
+	h1 {
+		color: $themakleur;
+		@include m.capital
+	}
+	li {
+		@include m.capital
+	}
+}
+
+nav {
+	background-color: $themakleur;
+	padding: 5px;
+
+	.navbar-nav {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		li {
+		  	width:(100%/($menu-items+1));
+			@media #{$xsq}{ width: 100%;}
+			padding-right: 15px;
+			&:hover{
+				@include m.transform(1.2,1.5);
+			}
+			a {
+				text-decoration: none;
+				color: $in-themakleur;
+
+			}
+		}
+	}
+
+	.navbar-header {
+		float: left;
+		@media #{$xsq}{ width: 100%;}
+		button{
+			float:right;
+			display: none;
+			@media #{$xsq}{ display:inline-block;}
+		}
+	}
+	.navbar-brand {
+		text-decoration: none;
+		color: $merk-kleur;
+
+	}
+
+
+	.sr-only {
+		display: none;
+	}
+
+	.icon-bar {
+		width: 20px;
+		height: 2px;
+		background-color: slategray;
+		margin: 2px;
+		display: block;
+	}
+}

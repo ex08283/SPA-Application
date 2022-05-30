@@ -1,0 +1,21 @@
+@mixin capital {
+	&:first-letter {
+		font-weight: bold;
+		font-size: larger;
+	}
+}
+
+
+@function textForBackground($color, $amount: 100%) {
+	//$inverse: invert($color, $amount)//$hue: hue($color) + 10);
+	@return invert($color, $amount);
+}
+
+
+
+@mixin transformCBG($backgroundColor, $amount: 100%) {
+	background-color: $backgroundColor;
+	color: textForBackground($backgroundColor, 80);
+}
+
+

@@ -1,0 +1,21 @@
+$company-fond: KDG, Verdana, sans-serif;
+$company-color: #aa00000;
+$class: ras;
+$bg: background;
+
+h1 {
+  font: 200% $company-fond;
+  color: $company-color;
+}
+
+li.#{$class} {
+  color: $company-color;
+  #{$bg}-color: #ccc;
+  + ul {
+    li {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

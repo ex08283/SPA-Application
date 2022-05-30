@@ -1,0 +1,66 @@
+@use "vars" as *;
+@use "mixins" as m;
+@use 'sass:color';
+
+.starter-template {
+  h1 {
+    color: $themakleur;
+    @include m.capital
+  }
+
+  li {
+    @include m.capital
+  }
+}
+
+nav {
+  background-color: $themakleur;
+  padding: 5px;
+
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      width: (100% / ($menu-items+1));
+      padding-right: 15px;
+
+      &:hover {
+        @include m.transform(1.2);
+      }
+
+      a {
+        text-decoration: none;
+        color: $in-themakleur;
+      }
+
+      &.active {
+        background-color: color.scale($themakleur, $lightness: 30%);
+      }
+    }
+  }
+
+  .navbar-header {
+    float: left;
+  }
+
+  .navbar-brand {
+    text-decoration: none;
+    color: $merk-kleur;
+
+  }
+
+
+  .sr-only {
+    display: none;
+  }
+
+  .icon-bar {
+    width: 20px;
+    height: 2px;
+    background-color: slategray;
+    margin: 2px;
+    display: block;
+  }
+}

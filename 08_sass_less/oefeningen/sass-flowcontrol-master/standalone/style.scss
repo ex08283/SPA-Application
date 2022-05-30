@@ -1,0 +1,10 @@
+@use 'sass:color';
+$inc:8;
+$maxNr:6;
+$baseColor:darkblue;
+@for $i from 1 through $maxNr {
+	h#{$i} {
+		font-size: ($i*$inc)+px;
+		color:  color.scale($baseColor,$lightness: ($i - 1)*10%);
+	}
+}

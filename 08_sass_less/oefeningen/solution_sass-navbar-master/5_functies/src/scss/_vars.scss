@@ -1,0 +1,6 @@
+@use 'sass:color';
+
+$themakleur: #a2231d;
+$in-themakleur: color.invert($themakleur);
+$menu-items: 3;
+$merk-kleur: silver;

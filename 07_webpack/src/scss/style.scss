@@ -1,0 +1,61 @@
+@use "vars" as *;
+@use 'sass:color';
+@use 'utils' as m;
+
+
+
+h1, thead {
+    font-family: $titel-font;
+    @include m.transformCBG($primary,70)
+}
+
+.important {
+    @include m.transformCBG($active,80)
+}
+
+button {
+    @include m.transformCBG($dark)
+}
+
+.page {
+    height: 1000px;
+    overflow: hidden;
+    transition: $transition;
+
+    tr.console-id {
+        &:hover{
+            color: $light;
+        }
+    }
+
+    table {
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+
+.page.collapsed {
+    max-height: 0;
+    opacity: 0;
+    transition: $transition;
+}
+
+#detail {
+    div {
+        //display: block;
+        //float: left;
+        margin-bottom: 10px;
+
+        label {
+            display: inline-block;
+            width: 200px;
+        }
+
+    }
+}
+
+
+
+

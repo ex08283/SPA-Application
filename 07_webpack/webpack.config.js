@@ -15,9 +15,11 @@ const config = {
     ],
     module: {
         rules: [
-            {test: /\.css$/i,
-                use: ["style-loader", "css-loader"]}, // this is better in development
-                //use: [MiniCssExtractPlugin.loader, "css-loader"]}, // betetr inm production
+            {test: /\.s?css$/i,
+                //use: ["style-loader", "scss-loader"],
+                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+            }, // this is better in development
+                //use: [MiniCssExtractPlugin.loader, "scss-loader"]}, // betetr inm production
             // load assets referred from html pages
             // {test:/\.html?$/i,
             //     use: ['html-loader']},

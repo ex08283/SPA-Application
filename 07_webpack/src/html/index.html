@@ -10,7 +10,7 @@
   <form id="consoleSearch">
     <label for="searchConsoleField">Naam Console</label>
     <input id="searchConsoleField" name="searchConsoleField" type="text">
-    <button type="submit">Search</button>
+    <button type="submit" class="important">Search</button>
   </form>
   <table id="consolesTable">
   </table>
@@ -21,21 +21,32 @@
   <form id="consolForm">
     <fieldset id="consolFs">
       <legend id="consoleLegend"></legend>
-      <label for="consol">Console</label>
-      <input type="text" id="consol" name="consol" disabled>
-      <label for="dateOfRelease">Date of Release</label>
-      <input type="text" id="dateOfRelease" name="dateOfRelease" disabled>
-      <label for="generation">Generation</label>
-      <input type="text" id="generation" name="generation" disabled>
-      <label for="handheld">Handheld</label>
-      <input type="text" id="handheld" name="handheld" disabled>
-      <label for="launchPrice">Launch Price</label>
-      <input type="text" id="launchPrice" name="launchPrice" disabled>
+      <div>
+        <label for="consol">Console</label>
+        <input type="text" id="consol" name="consol" disabled>
+      </div>
+      <div>
+        <label for="dateOfRelease">Date of Release</label>
+        <input type="text" id="dateOfRelease" name="dateOfRelease" disabled>
+      </div>
+      <div>
+        <label for="generation">Generation</label>
+        <input type="text" id="generation" name="generation" disabled>
+      </div>
+      <div>
+        <label for="handheld">Handheld</label>
+        <input type="text" id="handheld" name="handheld" disabled>
+      </div>
+      <div>
+        <label for="launchPrice">Launch Price</label>
+        <input type="text" id="launchPrice" name="launchPrice" disabled>
+      </div>
       <img src="" id="consoleImage" alt="Image of Console">
-      <button id="newButton" type="button">New</button>
+      <div>
+      <button id="newButton" class="important" type="button">New</button>
       <button id="showAllConsoles" type="button">Show all consoles</button>
       <button id="editButton" type="button">Edit</button>
-
+      </div>
     </fieldset>
     <fieldset id="gameFs">
       <table id="tableConsoleGame">

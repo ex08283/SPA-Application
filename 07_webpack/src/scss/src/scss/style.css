@@ -1,0 +1,48 @@
+h1 {
+  color: #a2231d;
+}
+h1:first-letter {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.starter-template li:first-letter {
+  font-weight: bold;
+  font-size: larger;
+}
+
+nav {
+  background-color: #a2231d;
+  padding: 5px;
+}
+nav .navbar-nav {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+nav .navbar-nav li {
+  padding-right: 15px;
+}
+nav .navbar-nav li a {
+  text-decoration: none;
+  color: #5ddce2;
+}
+nav .navbar-header {
+  float: left;
+}
+nav .navbar-brand {
+  text-decoration: none;
+  color: silver;
+}
+nav .sr-only {
+  display: none;
+}
+nav .icon-bar {
+  width: 20px;
+  height: 2px;
+  background-color: slategray;
+  margin: 2px;
+  display: block;
+}
+
+/*# sourceMappingURL=style.scss.map */

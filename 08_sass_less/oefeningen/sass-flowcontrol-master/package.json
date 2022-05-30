@@ -1,0 +1,21 @@
+{
+  "name": "koppen",
+  "version": "1.0.0",
+  "description": "sass lab",
+  "private": true,
+  "license": "KdG confidential",
+  "devDependencies": {
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "html-webpack-plugin": "^4.2.0",
+    "css-loader": "^3.5.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "sass-loader": "^8.0.2",
+    "sass": "^1.26.3"
+  },
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server"
+  }
+}

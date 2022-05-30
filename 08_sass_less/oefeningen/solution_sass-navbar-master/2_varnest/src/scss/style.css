@@ -1,0 +1,34 @@
+h1 {
+  color: #a2231d;
+}
+
+nav {
+  background-color: #a2231d;
+}
+nav .navbar-nav {
+  list-style: none;
+  display: flex;
+}
+nav .navbar-nav li {
+  padding-right: 15px;
+}
+nav .navbar-nav li a {
+  text-decoration: none;
+  color: #5ddce2;
+}
+nav .navbar-brand {
+  text-decoration: none;
+  color: silver;
+}
+nav .sr-only {
+  display: none;
+}
+nav .icon-bar {
+  width: 20px;
+  height: 2px;
+  background-color: slategray;
+  margin: 2px;
+  display: block;
+}
+
+/*# sourceMappingURL=style.scss.map */

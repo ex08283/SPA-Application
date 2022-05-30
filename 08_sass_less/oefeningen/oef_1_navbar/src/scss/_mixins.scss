@@ -1,0 +1,13 @@
+@mixin capital {
+  &:first-letter {
+    font-weight: bold;
+    font-size: larger;
+  }
+}
+
+@mixin transform ($schaalx, $schaaly:$schaalx) {
+  -webkit-transform: scale($schaalx,$schaaly);
+  -ms-transform: scale($schaalx, $schaaly);
+  transform: scale($schaalx, $schaaly);
+
+}

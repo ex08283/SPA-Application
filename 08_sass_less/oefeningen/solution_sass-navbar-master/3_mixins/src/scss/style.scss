@@ -1,0 +1,59 @@
+$themakleur: #a2231d;
+$in-themakleur: invert($themakleur);
+$merk-kleur: silver;
+
+@mixin capital {
+	&:first-letter {
+		font-weight: bold;
+		font-size: larger;
+	}
+}
+
+h1 {
+	color: $themakleur;
+	@include capital;
+}
+
+.starter-template {
+	li {
+		@include capital;
+	}
+}
+
+nav {
+	background-color: $themakleur;
+	padding: 5px;
+
+	.navbar-nav {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		li {
+			padding-right: 15px;
+			a {
+				text-decoration: none;
+				color: $in-themakleur;
+			}
+		}
+	}
+
+	.navbar-header {
+		float: left;
+	}
+	.navbar-brand {
+		text-decoration: none;
+		color: $merk-kleur;
+	}
+
+	.sr-only {
+		display: none;
+	}
+
+	.icon-bar {
+		width: 20px;
+		height: 2px;
+		background-color: slategray;
+		margin: 2px;
+		display: block;
+	}
+}

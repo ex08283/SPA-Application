@@ -1,0 +1,72 @@
+.starter-template h1 {
+  color: #a2231d;
+}
+.starter-template h1:first-letter {
+  font-weight: bold;
+  font-size: larger;
+}
+.starter-template li:first-letter {
+  font-weight: bold;
+  font-size: larger;
+}
+
+nav {
+  background-color: #a2231d;
+  padding: 5px;
+}
+nav .navbar-nav {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+nav .navbar-nav li {
+  width: 25%;
+  padding-right: 15px;
+}
+@media screen and (max-width: 576px) {
+  nav .navbar-nav li {
+    width: 100%;
+  }
+}
+nav .navbar-nav li:hover {
+  -webkit-transform: scale(1.2, 1.5);
+  -ms-transform: scale(1.2, 1.5);
+  transform: scale(1.2, 1.5);
+}
+nav .navbar-nav li a {
+  text-decoration: none;
+  color: #5ddce2;
+}
+nav .navbar-header {
+  float: left;
+}
+@media screen and (max-width: 576px) {
+  nav .navbar-header {
+    width: 100%;
+  }
+}
+nav .navbar-header button {
+  float: right;
+  display: none;
+}
+@media screen and (max-width: 576px) {
+  nav .navbar-header button {
+    display: inline-block;
+  }
+}
+nav .navbar-brand {
+  text-decoration: none;
+  color: silver;
+}
+nav .sr-only {
+  display: none;
+}
+nav .icon-bar {
+  width: 20px;
+  height: 2px;
+  background-color: slategray;
+  margin: 2px;
+  display: block;
+}
+
+/*# sourceMappingURL=style.scss.map */

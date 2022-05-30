@@ -1,0 +1,31 @@
+h1 {
+  font-size: 8px;
+  color: darkblue;
+}
+
+h2 {
+  font-size: 16px;
+  color: #0000b0;
+}
+
+h3 {
+  font-size: 24px;
+  color: #0000d5;
+}
+
+h4 {
+  font-size: 32px;
+  color: #0000fa;
+}
+
+h5 {
+  font-size: 40px;
+  color: #2020ff;
+}
+
+h6 {
+  font-size: 48px;
+  color: #4646ff;
+}
+
+/*# sourceMappingURL=style.scss.map */
