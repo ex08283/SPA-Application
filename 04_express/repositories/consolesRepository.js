@@ -23,16 +23,13 @@ export function getAllConsoles(){
 export function addConsole(consol) {
     consol.id = nextId
     entities.consoles.push({image:"",...consol})
-    //if (req.body.id >= nextKey) nextKey = req.body.id + 1
     nextId++;
     return (nextId - 1);
 
 }
 
 export function addConsoleByPut(consol, id) {
-
     const idx = entities.consoles.findIndex(p => p.id === parseInt(id));
-
     let status
 
     //we are assuming that req.body contains attribute id
@@ -46,7 +43,3 @@ export function addConsoleByPut(consol, id) {
     }
     return status
 }
-
-
-
-

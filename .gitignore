@@ -5,6 +5,10 @@
 /05_asynch_les
 /06_dynfont_les
 /07_webpack_les
+/08_sass_less
+/07_webpack/node_modules
+/09_bootstrap_les
+/09_bootstrap/
 node_modules
 
 .idea

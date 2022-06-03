@@ -19,7 +19,7 @@ function getGames(req, res) {
         : getAllGames()
     //console.log(req.games)
     games.forEach( g => changeFormat(games, req))
-    console.log(games)
+    //console.log(games)
     res.json(games)
 }
 

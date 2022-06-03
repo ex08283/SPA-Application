@@ -14,12 +14,6 @@ import {router as gamesRouter} from "./gamesRouter.js";
 
 
 export const router = express.Router();
-// router.param("consoleId", (req, res, next, consoleId) =>
-//     {
-//         req.games = findBy(g => g.consoleId === parseInt(req.params.consoleId))
-//         next()
-//     }
-// )
 router.use('/games', gamesRouter)
 router.use('/consoles/:consoleId/games', gamesRouter)
 router.use(express.json())
@@ -37,28 +31,34 @@ router.put('/consoles/:id', changeConsole)
 
 function changeConsole(req, res) {
     console.log(req.body)
+    if (!("handheld" in req.body)){
+        req.body.handheld = false
+    }
     res.status = addConsoleByPut(req.body, req.params.id)
-    res.end()
+    res.end("Edited succesfully")
 }
 
 function addToConsoles(req, res) {
+    console.log(req.body)
+    if (!("handheld" in req.body)){
+        req.body.handheld = false
+    }
+    console.log(req.body)
+
     const consol = req.body;
-    console.log(consol)
     let locID = addConsole(consol)
     res.status(201)
-        .location(`${req.originalUrl}/${locID}`).send()
+        .location(`${req.originalUrl}/${locID}`).send("Added succesfully")
 }
 
 
 function deleteConsoleById(req, res) {
     let consoles = getAllConsoles();
     const idx = consoles.findIndex(c => c.id === parseInt(req.params.id))
-    console.log("sdsd")
 
     if (idx >= 0) {
         consoles.splice(idx,1)
-        //res.sendStatus(204);
-        res.sendStatus(204)
+        res.send("deleted succesfully")
     } else {
         res.sendStatus(404)
     }
@@ -79,7 +79,7 @@ function getConsoles(req, res) {
     if (req.query.search){
         const foundSearch= findBySearch(req.query.search)
         if (foundSearch.length < 1) {
-            console.log('no consoles found')
+            //console.log('no consoles found')
             res.status(404).send('no consoles found')
         } else {
             //console.log("search")
@@ -90,7 +90,7 @@ function getConsoles(req, res) {
         //console.log(foundItems)
 
         if (foundItems.length < 1) {
-            console.log('no consoles found')
+            //console.log('no consoles found')
             res.status(404).send('no consoles found')
         } else {
             foundItems.map(p => addSelf(p, url.format({
@@ -106,7 +106,6 @@ function getConsoles(req, res) {
 }
 
 export function addSelf(object, href) {
-    //console.log(object)
     object._links = {
         "self": href
     }

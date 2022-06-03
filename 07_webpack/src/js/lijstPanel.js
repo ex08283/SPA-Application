@@ -1,6 +1,9 @@
-import {showDetail} from "./detailPanel.js";
 import {consolesTable} from "./commonUI.js";
 import {searchField} from "./commonUI.js";
+import {showConsoleDetail} from "./detailPanel.js";
+import {disableInputs} from "./detailPanel.js";
+import {showGamesForConsole} from "./detailPanel.js";
+
 //let editButton;
 export let dataLoc;
 
@@ -11,51 +14,75 @@ export async function searchConsoles(event) {
         ? `http://localhost:3000/api/consoles?search=${searchField.value}`
         :`http://localhost:3000/api/consoles`
 
-    fillConsolesTable(searchFieldValue)
-
+    try {
+        await fillConsolesTable(searchFieldValue)
+    } catch (e) {
+        console.log(e.message)
+    }
 }
+
 
 export async function handleConsoleTable(ev) {
     if (ev.target.classList.contains("deleteButton")) {
-        //console.log(ev)
         dataLoc = ev.target.parentElement.parentElement.dataset.location
-        const response = await fetch(dataLoc, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-            }
-        })
-        if (!response.ok) {
-            const errorMessage = await response.text();
-            console.log(errorMessage)
+
+        try {
+            const responseData = await fetchData(dataLoc, "DELETE");
+            //console.log(responseData)
+            await fillConsolesTable()
+        } catch (e) {
+            alert("Something went wrong, the console cannot be deleted, "+ e.message)
         }
-        await fillConsolesTable()
 
     } else {
-        if (document.querySelector("#detail").classList.contains("collapsed")) {
-            document.querySelector("#detail").classList.remove("collapsed")
-            document.querySelector("#lijst").classList.add("collapsed")
-        }
+        disableInputs()
+        document.querySelector("#detail").classList.toggle("collapsed")
+        document.querySelector("#lijst").classList.toggle("collapsed")
         dataLoc = ev.target.parentElement.dataset.location
-        //console.log(dataLoc)
-        await showDetail(dataLoc)
+
+        try {
+            showConsoleDetail(await fetchData(dataLoc,"GET"))
+            showGamesForConsole(await fetchData(dataLoc + "/games","GET"))
+        } catch (e) {
+            alert("startup server by typing in terminal > nodemon src/js/restClient.js, "+ e.message)
+        }
+    }
+}
+
+export async function fetchData(dataLoc,type,Data) {
+    const response = await fetch(dataLoc, {
+        method: type,
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+        },
+        body: Data
+    })
+    if (!response.ok) {
+        if (response.status === 404){//if not consoles are found
+            return []
+            } else {// if any other error, eg server is down
+            console.log(response.status.toString())
+            const errorMessage = await response.text();
+            throw new Error(errorMessage)}
+    }else if (type ==="GET"){
+        return response.json()
+    }else {
+        return await response.text()
     }
 }
 
 
 
 export async function fillConsolesTable(searchFieldValue) {
-    let result = await fetch(searchFieldValue??`http://localhost:3000/api/consoles`)
     let consoles
-    if (result.status === 404){
-        consoles = []
-    } else {
-        consoles = await result.json()
+    try {
+        consoles = await fetchData(searchFieldValue??"http://localhost:3000/api/consoles","GET");
+    } catch (e) {
+        throw new Error("startup server by typing in terminal > nodemon src/js/restClient.js, "+ e.message)
     }
 
     let allConsoleIDNodes = document.querySelectorAll(".console-id");
-    //console.log(allConsoleIDNodes)
     allConsoleIDNodes.forEach( a => consolesTable.removeChild(a))
     if (consoles.length !== 0) {consolesTable.innerHTML += '<thead class="console-id"><tr><th>ID</th><th>Console</th><th>Generation</th></tr></thead>'}
     consoles.forEach(c => consolesTable.append(createRow(c)))

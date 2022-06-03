@@ -11,23 +11,25 @@ let showAllConsoles;
 let editButton;
 let searchButton;
 export let searchField;
-
 export let consolesTable;
-//var dataLoc;
 
 export default async function start() {
+    consolesTable = document.querySelector("#consolesTable");
+    //
+    // try {
+    //     await fillConsolesTable()
+    // } catch (e) {
+    //     alert(e.message)
+    // }
     newButton = document.querySelector("#newButton");
     showAllConsoles = document.querySelector("#showAllConsoles");
     editButton = document.querySelector("#editButton");
     searchButton = document.querySelector("#consoleSearch");
-    consolesTable = document.querySelector("#consolesTable");
     searchField = document.getElementById("searchConsoleField")
-    //await fillConsolesTable()
     addEventHandlers();
 }
 
 function addEventHandlers(){
-
     newButton.addEventListener("click",showInputScreen)
     showAllConsoles.addEventListener("click", () => {
             disableInputs()
@@ -41,10 +43,3 @@ function addEventHandlers(){
     searchButton.addEventListener("submit", searchConsoles)
     consolesTable.addEventListener("click", handleConsoleTable)
 }
-
-
-
-
-
-
-

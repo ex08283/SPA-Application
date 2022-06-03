@@ -30,9 +30,7 @@ export function addConsole(consol) {
 }
 
 export function addConsoleByPut(consol, id) {
-
     const idx = entities.consoles.findIndex(p => p.id === parseInt(id));
-
     let status
 
     //we are assuming that req.body contains attribute id

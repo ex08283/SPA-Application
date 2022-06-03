@@ -1,27 +1,27 @@
 import {dataLoc} from "./lijstPanel.js";
 import {fillConsolesTable} from "./lijstPanel.js";
+import {fetchData} from "./lijstPanel.js";
 
-export async function showDetail(dataLoc) {
-    let consoleDetail = await fetch(dataLoc)
-    consoleDetail = await consoleDetail.json()
-    showConsoleDetail(consoleDetail)
-
-    let gamesForConsole = await fetch(dataLoc + "/games")
-    gamesForConsole = await gamesForConsole.json()
-    showGamesForConsole(gamesForConsole)
-}
 
 //Show details of console
-function showConsoleDetail(consoleDetail) {
+export function showConsoleDetail(consoleDetail) {
     let consoleLegend = document.querySelector("#consoleLegend")
-    consoleLegend.innerText = `${consoleDetail.consol}     ID: ${consoleDetail.id}`
     consoleLegend.innerText = `${consoleDetail.consol}     ID: ${consoleDetail.id}`
     let inputs = document.querySelectorAll("#consolFs input")
     document.querySelector("#consolForm").reset()
     enableInputs()
+    //console.log(consoleDetail)
     for (let i = 0; i <inputs.length; i++) {
+        if (inputs[i].getAttribute("type") === "checkbox") {
+            //console.log(consoleDetail[inputs[i].getAttribute("name").valueOf()])
+            consoleDetail[inputs[i].getAttribute("name").valueOf()]
+                ?inputs[i].setAttribute("checked", "checked")
+                :inputs[i].removeAttribute("checked")
+        }
         inputs[i].setAttribute("value",consoleDetail[inputs[i].getAttribute("name").valueOf()])
     }
+    document.getElementById("generation").value = consoleDetail.generation;
+
     disableInputs()
 
     let img = document.querySelector("#consolFs img")
@@ -31,7 +31,7 @@ function showConsoleDetail(consoleDetail) {
 }
 
 //Show table of games of console
-function showGamesForConsole(gamesForConsole) {
+export function showGamesForConsole(gamesForConsole) {
     let gameTable = document.getElementById("tableConsoleGame")
 
     let allGameTableNodes = document.querySelectorAll("#tableConsoleGame > tr");
@@ -42,7 +42,6 @@ function showGamesForConsole(gamesForConsole) {
     for (let game of gamesForConsole) {
         gameTable.append(createRowGame(game))
     }
-
 
     function createRowGame(gameAt) {
         let tr = document.createElement("tr")
@@ -67,38 +66,40 @@ function showGamesForConsole(gamesForConsole) {
 
 export async function showInputScreen(ev) {
     if (ev.target.innerText === "New") {
+        const formData = new FormData(document.getElementById("consolForm"));
+        const plainFormData = Object.fromEntries(formData.entries());
+        const formDataJsonString = JSON.stringify(plainFormData);
+        console.log(formDataJsonString)
         const button = ev.target
         button.innerText = "Add"
+        document.getElementById("editButton").setAttribute("disabled", "disabled")
         enableInputs()
-        document.querySelector("#consoleImage").setAttribute("src", "")
+        document.querySelector("#consoleImage").setAttribute("src", "");
         return;
     }
     if (ev.target.innerText === "Add") {
-        try {
-            const formData = new FormData(document.getElementById("consolForm"));
-            const plainFormData = Object.fromEntries(formData.entries());
-            const formDataJsonString = JSON.stringify(plainFormData);
+        const formData = new FormData(document.getElementById("consolForm"));
+        const plainFormData = Object.fromEntries(formData.entries());
+        (document.getElementById("handheld").checked)
+            ?plainFormData.handheld = true
+            :plainFormData.handheld = false
+        const formDataJsonString = JSON.stringify(plainFormData);
 
-            let response = await fetch("http://localhost:3000/api/consoles", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                },
-                body: formDataJsonString
-            })
-            if (!response.ok) {
-                const errorMessage = await response.text();
-                throw new Error(errorMessage);
-            }
+        try {
+            console.log(formDataJsonString)
+            let response = await fetchData("http://localhost:3000/api/consoles", "POST",formDataJsonString)
+            console.log(response)
             await fillConsolesTable()
 
             let nr = document.querySelectorAll("tr.console-id").length
-            //console.log(document.querySelectorAll("tr.console-id")[nr-1].childNodes[0])
-            document.querySelectorAll("tr.console-id")[nr-1].childNodes[0].click()
+            let newConsole =  document.querySelectorAll("tr.console-id")[nr-1]
+            showConsoleDetail(await fetchData(newConsole.dataset.location,"GET"))
+            showGamesForConsole(await fetchData(newConsole.dataset.location + "/games","GET"))
+            document.getElementById("editButton").removeAttribute("disabled")
+
             ev.target.innerText = "New"
         } catch (e) {
-            console.log(e)
+            alert("Something went wrong, the console cannot be added, "+ e.message)
         }
     }
 
@@ -110,24 +111,18 @@ export async function editConsole(ev) {
         const plainFormData = Object.fromEntries(formData.entries());
         const formDataJsonString = JSON.stringify(plainFormData);
 
-        const editResp = await fetch(dataLoc, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-            },
-            body: formDataJsonString
-        })
-
-        if (!editResp.ok){
-            console.log(editResp.json())
-            // const errorMessage = await response.text()
-            // throw new Error(errorMessage)
+        try {
+            console.log(formDataJsonString)
+            const editResp = await fetchData(dataLoc,"PUT",formDataJsonString)
+            console.log(editResp)
+            await fillConsolesTable()
+            showConsoleDetail(await fetchData(dataLoc,"GET"))
+            showGamesForConsole(await fetchData(dataLoc + "/games","GET"))
+            disableInputs()
+            ev.target.innerHTML = "Edit"
+        } catch (e) {
+            alert("Could not be edited," + e.message)
         }
-        await fillConsolesTable()
-        showDetail(dataLoc)
-        disableInputs()
-        ev.target.innerHTML = "Edit"
     } else {
         ev.target.innerHTML = "Save"
         enableEdit()
@@ -135,13 +130,17 @@ export async function editConsole(ev) {
 }
 
 function enableEdit(){
+    document.querySelector("#generation").removeAttribute("disabled");
     document.querySelectorAll("#consolFs input")
         .forEach(a => {
             a.disabled = false;
         })
 }
 
-function enableInputs(){
+export function enableInputs(){
+    document.querySelector("#generation").removeAttribute("disabled");
+    document.querySelector("#handheld").removeAttribute("checked");
+
     document.querySelectorAll("#consolFs input")
         .forEach(a => {
             a.disabled = false;
@@ -150,6 +149,7 @@ function enableInputs(){
 }
 
 export function disableInputs() {
+    document.querySelector("#generation").setAttribute("disabled","disabled");
     document.querySelectorAll("#consolFs input")
         .forEach(a => {
             a.disabled = true
