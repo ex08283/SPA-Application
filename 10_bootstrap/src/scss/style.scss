@@ -1,0 +1,69 @@
+@use "vars" as *;
+@use 'sass:color';
+@use 'utils' as m;
+@import "node_modules/bootstrap/scss/bootstrap";
+
+
+
+.important {
+    @include m.transformCBG($active,80)
+}
+
+button {
+    @include m.transformCBG($dark)
+}
+//
+//.page {
+//    height: 2000px;
+//    overflow: hidden;
+//    transition: $transition;
+//
+//    //tr.console-id {
+//    //    &:hover{
+//    //        color: $light;
+//    //    }
+//    //}
+//
+//    table {
+//        width: 100%;
+//        text-align: center;
+//    }
+//
+//}
+
+
+.page.collapsed {
+    max-height: 0;
+    opacity: 0;
+    transition: $transition;
+}
+
+#detail {
+    //flex-direction:  ;
+
+    //form{
+    //    display: flex;
+    //    flex-direction: row;
+    //    //fieldset {
+    //    //    display: flex;
+    //    //    //align-content: start;
+    //    //    flex-direction: column;
+    //    //    //div {
+    //    //    //    display: flex;
+    //    //    //    flex-direction: row;
+    //    //    //    //float: left;
+    //    //    //    margin-bottom: 10px;
+    //    //    //
+    //    //    //    label {
+    //    //    //        //display: inline-block;
+    //    //    //        width: 200px;
+    //    //    //    }
+    //    //    //}
+    //    //}
+    //}
+
+}
+
+
+
+

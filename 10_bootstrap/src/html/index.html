@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SPA</title>
+</head>
+<body>
+<section class="container-xxl">
+  <nav class="navbar navbar-expand-md navbar-light ">
+    <a class="navbar-brand" href="#">Console Management</a>
+    <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#main-nav"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="main-nav">
+      <ul class="navbar-nav nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link active" data-bs-toggle="tab" href="#lijst">Console List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#detail">Detial Console</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#about">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+</section>
+
+
+<!--<section class="container">-->
+  <div class="tab-content">
+    <div id="lijst" class="tab-pane active fade show">
+      <h1>Consoles</h1>
+      <form class="container" id="consoleSearch" action="#">
+        <div class="form-floating my-1">
+          <input id="searchConsoleField" class="form-control" name="searchConsoleField" type="text" placeholder="Console">
+          <label for="searchConsoleField">Console</label>
+        </div>
+        <button class="btn btn-primary my-3" type="submit">Search</button>
+      </form>
+
+      <table  class="table table-hover" id="consolesTable">
+      </table>
+    </div>
+    <div id="detail" class="tab-pane container-lg">
+      <h1 class="row">Console Details</h1>
+      <form class="row" id="consolForm">
+        <div class="col-md-12 col-lg-8 container">
+          <fieldset class="row" id="consolFs" disabled>
+            <div class="col-md-6">
+              <label for="consol" class="form-label">Console</label>
+              <input type="text" id="consol" name="consol" class="form-control">
+            </div>
+            <div class="col-md-6">
+              <label for="dateOfRelease" class="form-label">Date of Release</label>
+              <input type="text" id="dateOfRelease" name="dateOfRelease" class="form-control">
+            </div>
+            <div class="col-md-6">
+              <label for="generation" class="form-label">Generation</label>
+              <select name="generation" id="generation" class="form-select">
+                <option value="First">First</option>
+                <option value="Second">Second</option>
+                <option value="Third">Third</option>
+                <option value="Fourth">Fourth</option>
+                <option value="Fifth">Fifth</option>
+                <option value="Sixth">Sixth</option>
+                <option value="Seventh">Seventh</option>
+                <option value="Eight">Eight</option>
+                <option value="Ninth">Ninth</option>
+                <option value="Tenth">Tenth</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="handheld" class="form-label">Handheld</label>
+              <input type="checkbox" id="handheld" name="handheld" >
+            </div>
+            <div class="col-md-6">
+              <label for="launchPrice" class="form-label">Launch Price</label>
+              <input type="text" id="launchPrice" name="launchPrice" >
+            </div>
+            <div class="col-md-6">
+              <label for="image" class="form-label">Image URL</label>
+              <input type="text" id="image" name="image" >
+            </div>
+          </fieldset>
+        </div>
+        <img class="col-md-12 col-lg-4" src="" id="consoleImage" alt="Image of Console">
+      </form>
+      <div class="btn-group-lg gap-2 my-2 w-auto" id="btn-group">
+        <button  id="newButton" type="button">New</button>
+        <button  id="showAllConsoles" type="button">Show all consoles</button>
+        <button  id="editButton" type="button">Edit</button>
+      </div>
+      <section class="row" id="gameFs">
+        <!--    //table is replaced with cards for week9-->
+        <div class="container-lg">
+          <h2>Games</h2>
+          <div id="gameCards"  class="row my-5 align-items-center justify-content-center">
+
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="about" class="tab-pane">
+      <h1>About</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium blanditiis cumque dolores, earum expedita
+        facilis hic, ipsum itaque necessitatibus neque sint sit tenetur voluptatibus! Cumque nemo ullam velit. Qui,
+        quis?</p>
+
+    </div>
+  </div>
+<!--</section>-->
+</body>
+</html>

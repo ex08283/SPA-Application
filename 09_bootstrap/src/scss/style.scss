@@ -38,31 +38,31 @@ button {
     transition: $transition;
 }
 
-//#detail {
-//    flex-direction:  ;
-//
-//    form{
-//        display: flex;
-//        flex-direction: row;
-//        fieldset {
-//            display: flex;
-//            //align-content: start;
-//            flex-direction: column;
-//            div {
-//                display: flex;
-//                flex-direction: row;
-//                //float: left;
-//                margin-bottom: 10px;
-//
-//                label {
-//                    //display: inline-block;
-//                    width: 200px;
-//                }
-//            }
-//        }
-//    }
-//
-//}
+#detail {
+    //flex-direction:  ;
+
+    form{
+        display: flex;
+        flex-direction: row;
+        fieldset {
+            display: flex;
+            //align-content: start;
+            flex-direction: column;
+            div {
+                display: flex;
+                flex-direction: row;
+                //float: left;
+                margin-bottom: 10px;
+
+                label {
+                    //display: inline-block;
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+}
 
 
 
